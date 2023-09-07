@@ -1,25 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './App.css'
 import Pokedex from './components/Pokedex'
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, getPokemons } from './redux/actions';
+import { RootState } from './redux/store/store';
 
 function App() {
-  const [pokemonData, setPokemonData] = useState();
+  const pokemonData = useSelector((state: RootState) => state.pokemonData);
+  console.log(pokemonData)
+  const dispatch: AppDispatch = useDispatch();
 
-  const getPokemons = async () =>{
-      try {
-          const response = await fetch('https://pokeapi.co/api/v2/pokemon/oinkologne/');
-          if(response.ok){
-              const data = await response.json();
-              console.log(data);
-              setPokemonData(data);
-          }
-      } catch (error) {
-          console.log(error);
-      }
-  }
   useEffect(() =>{
-    getPokemons();
-  }, [])
+    dispatch(getPokemons())
+  }, [dispatch])
 
   return (
     <>

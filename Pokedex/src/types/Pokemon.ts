@@ -1,3 +1,4 @@
+
 interface Ability {
     is_hidden: boolean;
     slot: number;
@@ -139,5 +140,10 @@ interface Ability {
     past_types: PastType[];
   }
   
+  export interface PokemonAction {
+    type: string;
+    payload: Pokemon | null; // Assicurati che 'payload' abbia lo stesso tipo di dato del tuo stato
+  }
+
   export default Pokemon;
   
