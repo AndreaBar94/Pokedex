@@ -142,7 +142,7 @@ interface Ability {
   
   export interface PokemonAction {
     type: string;
-    payload: Pokemon | null; // Assicurati che 'payload' abbia lo stesso tipo di dato del tuo stato
+    payload: Pokemon | null;
   }
 
   export default Pokemon;

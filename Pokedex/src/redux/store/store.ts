@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import thunk from 'redux-thunk';
 import pokemonReducer from '../reducers/PokemonReducer';
 
 const store = configureStore({
-  reducer: pokemonReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+    reducer: pokemonReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

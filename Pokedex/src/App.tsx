@@ -1,17 +1,18 @@
-import { useEffect } from 'react';
+import { Dispatch, useEffect } from 'react';
 import './App.css'
 import Pokedex from './components/Pokedex'
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, getPokemons } from './redux/actions';
 import { RootState } from './redux/store/store';
+import { PokemonAction } from './types/Pokemon';
+import { getPokemons } from './redux/actions/index';
 
 function App() {
   const pokemonData = useSelector((state: RootState) => state.pokemonData);
   console.log(pokemonData)
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch() as Dispatch<PokemonAction>
 
   useEffect(() =>{
-    dispatch(getPokemons())
+    getPokemons(dispatch);
   }, [dispatch])
 
   return (
