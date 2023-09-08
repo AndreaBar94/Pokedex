@@ -1,4 +1,3 @@
-
 interface Ability {
     is_hidden: boolean;
     slot: number;
@@ -140,6 +139,12 @@ interface Ability {
     past_types: PastType[];
   }
   
+  export interface PokemonList {
+    count: number;
+    next: '';
+    previous: null;
+    results: [];
+  }
   export interface PokemonAction {
     type: string;
     payload: Pokemon | null;

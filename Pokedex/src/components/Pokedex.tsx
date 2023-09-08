@@ -1,7 +1,7 @@
 import { Card } from "react-bootstrap";
-import Pokemon from "../types/Pokemon";
+import Pokemon, { PokemonList } from "../types/Pokemon";
 
-const Pokedex: React.FC<{ pokemonData: Pokemon }> = ({pokemonData}) => {
+const Pokedex: React.FC<{ pokemonData: Pokemon, pokemonList: PokemonList }> = ({pokemonData}) => {
 
     return (
         <>
