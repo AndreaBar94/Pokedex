@@ -145,6 +145,7 @@ interface Ability {
     previous: null;
     results: [];
   }
+
   export interface PokemonAction {
     type: string;
     payload: Pokemon | null;

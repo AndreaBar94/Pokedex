@@ -27,7 +27,6 @@ export const getPokemonList = async (dispatch: Dispatch<PokemonAction>, url: str
         const response = await fetch(url);
         if (response.ok) {
         const data = await response.json();
-        console.log(data);
         dispatch({ type: POKEMON_LIST, payload: data });
         } else {
         console.log('API response error:', response.status);
