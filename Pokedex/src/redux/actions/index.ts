@@ -13,6 +13,8 @@ export const getPokemon = async (dispatch: Dispatch<PokemonAction>, url: string)
         if (response.ok) {
         const data = await response.json();
         dispatch({ type: POKEMON, payload: data });
+        }else if(response.status === 404) {
+            dispatch({ type: POKEMON, payload: null });
         } else {
         console.log('API response error:', response.status);
         }

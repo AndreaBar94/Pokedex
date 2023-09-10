@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-      <input type="text" value={pokemonName} onChange={handleInputChange} placeholder="Inserisci il nome del Pokémon" />
+      <input type='search' value={pokemonName} onChange={handleInputChange} placeholder="Search..." className='custom-input'/>
       {pokemonData && <Pokedex pokemonData={pokemonData} />}
     </>
   )

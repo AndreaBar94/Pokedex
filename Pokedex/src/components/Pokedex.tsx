@@ -5,16 +5,28 @@ const Pokedex: React.FC<{ pokemonData: Pokemon }> = ({pokemonData}) => {
 
     return (
         <>
-            <Card className="bg-primary">
-                <Card.Img variant="top" src={pokemonData?.sprites?.front_default || "placeholder-url"} />
+        {pokemonData ? 
+            (<Card className="poke-card">
+                <Card.Img variant="top" src={pokemonData?.sprites?.front_default || "placeholder-url"} className="custom-card-image"/>
                 <Card.Body>
-                    <Card.Title>{pokemonData?.name}</Card.Title>
+                    <Card.Title>Name: {pokemonData?.name}</Card.Title>
                     <Card.Text>
                         <p>Height: {pokemonData?.height}</p>
                         <p>Weight: {pokemonData?.weight}</p>
                     </Card.Text>
                 </Card.Body>
-            </Card>
+            </Card> )
+            :
+            (<Card className="poke-card">
+                <div className="custom-card-image"></div>
+                <Card.Body>
+                    <Card.Text>
+                        <p>404 not found</p>
+                    </Card.Text>
+                </Card.Body>
+            </Card> )
+            }  
+            
         
         </>
     )
