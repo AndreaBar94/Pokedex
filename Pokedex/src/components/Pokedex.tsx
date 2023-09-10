@@ -5,7 +5,7 @@ const Pokedex: React.FC<{ pokemonData: Pokemon }> = ({pokemonData}) => {
 
     return (
         <>
-        {pokemonData ? 
+        {pokemonData && pokemonData.id ? 
             (<Card className="poke-card">
                 <Card.Img variant="top" src={pokemonData?.sprites?.front_default || "placeholder-url"} className="custom-card-image"/>
                 <Card.Body>
