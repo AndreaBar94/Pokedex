@@ -1,29 +1,29 @@
-import { Dispatch, useEffect } from 'react';
+import { Dispatch, useEffect, useState } from 'react';
 import './App.css'
 import Pokedex from './components/Pokedex'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './redux/store/store';
-import { PokemonAction, PokemonList } from './types/Pokemon';
-import { getPokemon, getPokemonList } from './redux/actions/index';
+import { PokemonAction } from './types/Pokemon';
+import { getPokemon } from './redux/actions/index';
 
 function App() {
-
   const pokemonData = useSelector((state: RootState) => state.pokemonData);
-  const pokemonList: PokemonList = useSelector((state: RootState) => state.pokemonList);
+  const dispatch = useDispatch() as Dispatch<PokemonAction>;
+  const [pokemonName, setPokemonName] = useState('');
 
-  const dispatch = useDispatch() as Dispatch<PokemonAction>
-
-  const listUrl = 'https://pokeapi.co/api/v2/pokemon/';
-  const url = 'https://pokeapi.co/api/v2/pokemon/5/';
-
-  useEffect(() =>{
-    getPokemonList(dispatch, listUrl)
+  useEffect(() => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}/`;
     getPokemon(dispatch, url);
-  }, [dispatch])
+  }, [dispatch, pokemonName]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPokemonName(e.target.value);
+  };
 
   return (
     <>
-      {pokemonData && <Pokedex  pokemonData={pokemonData} pokemonList={pokemonList}/>}
+      <input type="text" value={pokemonName} onChange={handleInputChange} placeholder="Inserisci il nome del Pokémon" />
+      {pokemonData && <Pokedex pokemonData={pokemonData} />}
     </>
   )
 }

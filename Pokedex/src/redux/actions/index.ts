@@ -22,6 +22,7 @@ export const getPokemon = async (dispatch: Dispatch<PokemonAction>, url: string)
     
 };
 
+//this one returns a list of pokemon, with name and url
 export const getPokemonList = async (dispatch: Dispatch<PokemonAction>, url: string) => {
     try {
         const response = await fetch(url);

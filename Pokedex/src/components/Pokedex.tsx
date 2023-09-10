@@ -1,23 +1,21 @@
 import { Card } from "react-bootstrap";
-import Pokemon, { PokemonList } from "../types/Pokemon";
+import Pokemon from "../types/Pokemon";
 
-const Pokedex: React.FC<{ pokemonData: Pokemon, pokemonList: PokemonList }> = ({pokemonData, pokemonList}) => {
+const Pokedex: React.FC<{ pokemonData: Pokemon }> = ({pokemonData}) => {
 
     return (
         <>
-        {pokemonList.results.map((pokemon: Pokemon)=> 
-        
             <Card className="bg-primary">
                 <Card.Img variant="top" src={pokemonData?.sprites?.front_default || "placeholder-url"} />
                 <Card.Body>
-                    <Card.Title>{pokemon && pokemon.name}</Card.Title>
+                    <Card.Title>{pokemonData?.name}</Card.Title>
                     <Card.Text>
                         <p>Height: {pokemonData?.height}</p>
                         <p>Weight: {pokemonData?.weight}</p>
                     </Card.Text>
                 </Card.Body>
             </Card>
-        )}
+        
         </>
     )
 }
