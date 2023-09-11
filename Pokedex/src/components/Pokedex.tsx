@@ -18,7 +18,8 @@ const Pokedex: React.FC<{ pokemonData: Pokemon }> = ({pokemonData}) => {
                                 <span>Weight: {pokemonData?.weight}</span>
                             </Col>
                             <span className="my-2">Types:</span>
-                            {pokemonData?.types.map((types) => 
+                            {/* inserire condizione di controllo per evitare rendering senza dati */}
+                            {pokemonData?.types?.map((types) => 
                             <>
                                 <span key={types.slot} className="fs-5">
                                     {types.type.name}
