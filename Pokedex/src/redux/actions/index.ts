@@ -2,7 +2,6 @@ import { Dispatch } from "react";
 import { PokemonAction } from "../../types/Pokemon";
 
 export const POKEMON = 'POKEMON';
-export const POKEMON_LIST = 'POKEMON_LIST';
 
 export type AppDispatch = Dispatch<PokemonAction>;
 
@@ -24,17 +23,17 @@ export const getPokemon = async (dispatch: Dispatch<PokemonAction>, url: string)
     
 };
 
-//this one returns a list of pokemon, with name and url
-export const getPokemonList = async (dispatch: Dispatch<PokemonAction>, url: string) => {
-    try {
-        const response = await fetch(url);
-        if (response.ok) {
-        const data = await response.json();
-        dispatch({ type: POKEMON_LIST, payload: data });
-        } else {
-        console.log('API response error:', response.status);
-        }
-    } catch (error) {
-        console.error('Response error:', error);
-    }
-};
+//this one returns a list of pokemon, with name and url, maybe a nice add for the future
+// export const getPokemonList = async (dispatch: Dispatch<PokemonAction>, url: string) => {
+//     try {
+//         const response = await fetch(url);
+//         if (response.ok) {
+//         const data = await response.json();
+//         dispatch({ type: POKEMON_LIST, payload: data });
+//         } else {
+//         console.log('API response error:', response.status);
+//         }
+//     } catch (error) {
+//         console.error('Response error:', error);
+//     }
+// };
