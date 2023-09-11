@@ -24,6 +24,12 @@ function App() {
     setPokemonName(e.target.value);
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSearchClick();
+    }
+  };
+  
   return (
     <>
       <main> 
@@ -37,7 +43,8 @@ function App() {
           <input 
           type='search' 
           value={pokemonName} 
-          onChange={handleInputChange} 
+          onChange={handleInputChange}
+          onKeyDown={handleKeyPress}
           placeholder="Search..." 
           className='custom-input'/>
           <button 

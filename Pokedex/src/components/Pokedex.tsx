@@ -20,7 +20,7 @@ const Pokedex: React.FC<{ pokemonData: Pokemon }> = ({pokemonData}) => {
                             <span className="my-2">Types:</span>
                             {pokemonData?.types?.map((types) => 
                             <>
-                                <span key={types.slot} className="fs-5">
+                                <span key={pokemonData.id} className="fs-5">
                                     {types.type.name}
                                 </span>
                             </>)}
