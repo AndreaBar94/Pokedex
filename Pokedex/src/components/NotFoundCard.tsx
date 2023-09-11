@@ -3,13 +3,13 @@ import { Card } from "react-bootstrap";
 const NotFoundCard = () => {
   return (
     <Card className="poke-card">
-                <div className="custom-card-image"></div>
-                <Card.Body>
-                    <Card.Text>
-                        <p>404 not found</p>
-                    </Card.Text>
-                </Card.Body>
-            </Card>
+        <div className="custom-card-image"></div>
+        <Card.Body>
+            <Card.Text className="fs-5 text-muted">
+                Enter a valid Pokémon name / #id number
+            </Card.Text>
+        </Card.Body>
+    </Card>
   )
 }
 

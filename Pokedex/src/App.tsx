@@ -26,25 +26,30 @@ function App() {
 
   return (
     <>
-    <main> 
-      <div className='input-search-box'>
-        
-        <input 
-        type='search' 
-        value={pokemonName} 
-        onChange={handleInputChange} 
-        placeholder="Search..." 
-        className='custom-input'/>
-        <button 
-          onClick={handleSearchClick}
-          className='search-button'
-          >
-            <FontAwesomeIcon icon={faSearch} className='search-logo'/>
-        </button>
-      </div>
-      {pokemonData ? (<Pokedex pokemonData={pokemonData} />) : <NotFoundCard/>}
-    </main>
-      
+      <main> 
+      <div className="circle"></div>
+      <div className='in-circle'></div>
+      <div className='in-circle2'></div>
+      <div className="circle2"></div>
+      <div className="circle3"></div>
+      <div className="circle4"></div>
+        <div className='input-search-box'>
+          <input 
+          type='search' 
+          value={pokemonName} 
+          onChange={handleInputChange} 
+          placeholder="Search..." 
+          className='custom-input'/>
+          <button 
+            onClick={handleSearchClick}
+            className='search-button'
+            >
+              <FontAwesomeIcon icon={faSearch} className='search-logo'/>
+          </button>
+        </div>
+        {pokemonData?.id ? (<Pokedex pokemonData={pokemonData} />) : <NotFoundCard/>}
+      <div className='decorative-bottom'></div>
+      </main>
     </>
   )
 }

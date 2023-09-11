@@ -4,40 +4,107 @@
 	padding: 2rem;
 	text-align: center;
 }
-@media screen and (max-width: 505px) {
-	body {
-		background-image: url(./assets/imgs/pokedex.jpg);
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
-}
-@media screen and (min-width: 506px) {
-	body {
-		background-color: #ef1e24;
-	}
-	main {
-		border: 2px solid #180000;
-		border-radius: 10px;
-		padding: 2rem;
-	}
+
+body {
+	background-color: antiquewhite;
 }
 
 main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
+	background-color: #ef1e24;
+	border: 2px solid #180000;
+	border-radius: 10px;
+	padding: 2rem;
 }
-.card {
-	padding: 2em;
+/* style for circles on top of the pokedex */
+.circle {
+	width: 100px;
+	height: 100px;
+	background-color: white;
+	border-radius: 50%;
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	border: 3px solid black;
 }
 
+.in-circle {
+	width: 70px;
+	height: 70px;
+	background-color: rgb(66, 66, 151);
+	border-radius: 50%;
+	position: absolute;
+	top: 1.95rem;
+	left: 1.95rem;
+	border: 3px solid black;
+}
+
+.in-circle2 {
+	width: 25px;
+	height: 25px;
+	background-color: rgb(215, 215, 232);
+	border-radius: 50%;
+	position: absolute;
+	top: 2.7rem;
+	left: 2.7rem;
+}
+
+.circle2 {
+	width: 25px;
+	height: 25px;
+	background-color: rgb(255, 25, 0);
+	border-radius: 50%;
+	position: absolute;
+	top: 1rem;
+	left: 8rem;
+	border: 2px solid black;
+}
+
+.circle3 {
+	width: 25px;
+	height: 25px;
+	background-color: rgb(255, 255, 0);
+	border-radius: 50%;
+	position: absolute;
+	top: 1rem;
+	left: 10rem;
+	border: 2px solid black;
+}
+
+.circle4 {
+	width: 25px;
+	height: 25px;
+	background-color: rgb(25, 190, 0);
+	border-radius: 50%;
+	position: absolute;
+	top: 1rem;
+	left: 12rem;
+	border: 2px solid black;
+}
+/* queries for responsive */
+@media screen and (max-width: 505px) {
+	.input-search-box {
+		margin-top: 9rem;
+	}
+}
+
+@media screen and (min-width: 506px) {
+	.input-search-box {
+		margin-top: 6rem;
+	}
+}
+
+/* searchbar style */
 .custom-input {
 	padding: 1rem;
 	font-size: 1.5rem;
 	font-family: 'Times New Roman', Times, serif;
 	text-align: center;
 	text-transform: capitalize;
-	background-color: rgba(103, 243, 122, 0.675);
+	background-color: rgb(103, 243, 122);
 	color: black;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;
@@ -49,6 +116,7 @@ main {
 	width: 12.4rem;
 }
 
+/*  poké card style */
 .poke-card {
 	margin-top: 1rem;
 	padding: 1rem;
@@ -56,7 +124,7 @@ main {
 	font-family: 'Times New Roman', Times, serif;
 	text-align: center;
 	text-transform: capitalize;
-	background-color: rgba(103, 243, 122, 0.675);
+	background-color: rgb(128, 245, 144);
 	color: black;
 	box-shadow: 4px 2px 15px -3px rgba(0, 0, 0, 0.47);
 	border: 1px solid rgba(0, 0, 0, 0.483);
@@ -74,6 +142,7 @@ main {
 	animation: bounce 2s infinite;
 }
 
+/* animation for image to bounce */
 @keyframes bounce {
 	0%,
 	20%,
@@ -98,7 +167,7 @@ main {
 
 .search-button {
 	padding: 1rem;
-	background-color: rgba(103, 243, 122, 0.675);
+	background-color: rgb(85, 204, 101);
 	color: black;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
@@ -112,11 +181,14 @@ main {
 
 .input-search-box {
 	width: 16.4rem;
-	margin-top: 9rem;
 	display: flex;
 	align-items: stretch;
 }
 
-main h3 {
-	color: rgba(0, 0, 0, 0.377);
+.decorative-bottom {
+	width: 200px;
+	height: 10px;
+	border: 2px solid rgba(0, 0, 0, 0.604);
+	border-radius: 5px;
+	margin-top: 2rem;
 }
