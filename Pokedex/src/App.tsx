@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import { Dispatch, useState } from 'react';
 import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './redux/store/store';
 import { PokemonAction } from './types/Pokemon';
 import { getPokemon } from './redux/actions/index';
+import NotFoundCard from './components/NotFoundCard';
 
 function App() {
   const pokemonData = useSelector((state: RootState) => state.pokemonData);
@@ -24,9 +26,9 @@ function App() {
 
   return (
     <>
-    <main>
-      <h1>Looking for a Pokémon?</h1>
+    <main> 
       <div className='input-search-box'>
+        
         <input 
         type='search' 
         value={pokemonName} 
@@ -40,9 +42,7 @@ function App() {
             <FontAwesomeIcon icon={faSearch} className='search-logo'/>
         </button>
       </div>
-      
-
-      {pokemonData && <Pokedex pokemonData={pokemonData} />}
+      {pokemonData ? (<Pokedex pokemonData={pokemonData} />) : <NotFoundCard/>}
     </main>
       
     </>

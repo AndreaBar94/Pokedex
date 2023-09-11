@@ -4,9 +4,22 @@
 	padding: 2rem;
 	text-align: center;
 }
-
-body {
-	background-color: rgb(193, 67, 67);
+@media screen and (max-width: 505px) {
+	body {
+		background-image: url(./assets/imgs/pokedex.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+@media screen and (min-width: 506px) {
+	body {
+		background-color: #ef1e24;
+	}
+	main {
+		border: 2px solid #180000;
+		border-radius: 10px;
+		padding: 2rem;
+	}
 }
 
 main {
@@ -24,7 +37,7 @@ main {
 	font-family: 'Times New Roman', Times, serif;
 	text-align: center;
 	text-transform: capitalize;
-	background-color: antiquewhite;
+	background-color: rgba(103, 243, 122, 0.675);
 	color: black;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;
@@ -32,8 +45,8 @@ main {
 	border-bottom-left-radius: 5px;
 	box-shadow: 4px 2px 15px -3px rgba(0, 0, 0, 0.47);
 	border: 1px solid rgba(0, 0, 0, 0.483);
-	border-right: none;
-	width: 15rem;
+	border-right: 0px;
+	width: 12.4rem;
 }
 
 .poke-card {
@@ -43,7 +56,7 @@ main {
 	font-family: 'Times New Roman', Times, serif;
 	text-align: center;
 	text-transform: capitalize;
-	background-color: antiquewhite;
+	background-color: rgba(103, 243, 122, 0.675);
 	color: black;
 	box-shadow: 4px 2px 15px -3px rgba(0, 0, 0, 0.47);
 	border: 1px solid rgba(0, 0, 0, 0.483);
@@ -51,10 +64,30 @@ main {
 	border-radius: 5px;
 }
 
-.custom-card-image {
+.custom-card-holder {
 	background-color: rgba(26, 25, 27, 0.393);
 	padding-inline: 4rem;
 	border-radius: 10px;
+}
+
+.custom-card-image {
+	animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-12px);
+	}
+	60% {
+		transform: translateY(-5px);
+	}
 }
 
 .search-logo {
@@ -65,7 +98,7 @@ main {
 
 .search-button {
 	padding: 1rem;
-	background-color: antiquewhite;
+	background-color: rgba(103, 243, 122, 0.675);
 	color: black;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
@@ -73,10 +106,17 @@ main {
 	border-bottom-left-radius: 0px;
 	box-shadow: 4px 2px 15px -3px rgba(0, 0, 0, 0.47);
 	border: 1px solid rgba(0, 0, 0, 0.483);
-	border-left: none;
+	border-left: 0px;
+	width: 4rem;
 }
 
 .input-search-box {
+	width: 16.4rem;
+	margin-top: 9rem;
 	display: flex;
 	align-items: stretch;
+}
+
+main h3 {
+	color: rgba(0, 0, 0, 0.377);
 }
